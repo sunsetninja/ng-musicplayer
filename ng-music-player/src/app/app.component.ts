@@ -41,16 +41,13 @@ export class AppComponent implements OnInit {
     this.backgroundStyle = this.composeBackgroundStyle(randomTrack.artwork_url);
   }
 
-  handleTimeUpdate() {
-    setTimeout(() => {
-      const elapsed = this.musicService.audio.currentTime;
-      const duration = this.musicService.audio.duration;
-      this.position = elapsed / duration;
-      this.elapsed = this.musicService.formatTime(elapsed);
-      this.duration = this.musicService.formatTime(duration);
-      console.log(this.position);
-    }, 1000);
-
+  handleTimeUpdate(e) {
+    const elapsed = this.musicService.audio.currentTime;
+    let duration = this.musicService.audio.duration;
+    if (isNaN(duration)) { duration = 1; }
+    this.position = elapsed / duration;
+    this.elapsed = this.musicService.formatTime(elapsed);
+    this.duration = this.musicService.formatTime(duration);
   }
 
   handleQuery(payload) {
@@ -68,10 +65,10 @@ export class AppComponent implements OnInit {
   handlePausePlay() {
     if (this.musicService.audio.paused) {
       this.paused = true;
-      this.musicService.audio.play()
+      this.musicService.audio.play();
     } else {
       this.paused = false;
-      this.musicService.audio.pause()
+      this.musicService.audio.pause();
     }
   }
 

@@ -1,2 +1,2 @@
 # ng-musicplayer
-Angelar + Electron + Soundcloud music player
+Angular + Electron + Soundcloud music player

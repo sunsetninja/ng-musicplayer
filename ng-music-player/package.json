@@ -42,7 +42,7 @@
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.28.3",
     "codelyzer": "~2.0.0-beta.1",
-    "electron": "^1.7.5",
+    "electron": "^9.4.0",
     "electron-reload": "^1.2.1",
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "^11.3.2",
